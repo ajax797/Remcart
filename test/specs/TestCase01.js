@@ -102,20 +102,8 @@ describe('Adding restaurant ', async () => {
 
         let RestaurantList=await Promise.all(resList.map( async v=>await v.getText()))
         console.log(RestaurantList);
-
-        // browser.waitUntil(RestaurantList.length==resList.length)
-        // .then(()=>{RestaurantList.includes('Jordania'+rn)})
-        // .then(()=>{console.log("found");})
-        // .catch(()=>{console.log("not found");})
-
-
-        // expect().toBeDisplayed()
-        // console.log(await restaurantList);
-        // let result=await browser.findElementFromElement(restaurantList,'Jordania'+rn)
-
-        // //const restaurantList1 = await browser.$$('//tbody//td[2]')
         let res=RestaurantList.includes('Jordania'+rn)
-        //console.log(res+'-------------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxx------------------------------');
+        console.log(res+'-------------------------xxxxxxxxxxxxxxxxxxxxxxxxxxxx------------------------------');
 
     })
 
