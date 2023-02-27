@@ -22,3 +22,5 @@ class AdminLoginPage{
         return super.open('Adminlogin');
     }
 }
+//module.exports=new AdminLoginPage()
+export default new AdminLoginPage();
