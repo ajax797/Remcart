@@ -24,13 +24,11 @@ class AdminHomePage{
         return $('//a[.="Add Menu"]');
     }
 
-    get btnAllRestaurant () {
-        return $('a*=All Restaurant');
+    get btnOrders () {
+        return $('//a[.="Orders"]');
     }
 
-    get btnmenu () {
-        return $('//span[.="Menu"]');
-    }
+
 
 }
 
