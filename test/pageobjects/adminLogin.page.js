@@ -1,21 +1,21 @@
 class AdminLoginPage{
     
-    get inputUsername () {
+    get Username_tf () {
         return $('input[name="username"]');
     }
 
-    get inputPassword () {
+    get Password_tf () {
         return $('input[name="password"]');
     }
 
-    get btnLogin () {
+    get Login_btn () {
         return $('input[name="submit"]');
     }
 
     async Adminlogin (username, password) {
-        await this.inputUsername.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnLogin.click();
+        await this.Username_tf.setValue(username);
+        await this.Password_tf.setValue(password);
+        await this.Login_btn.click();
     }
 
     open () {

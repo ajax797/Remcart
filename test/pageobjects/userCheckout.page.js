@@ -1,14 +1,17 @@
-class UserCheckoutPage{
+import UserBasePage from "./userBase.page.js";
+
+class UserCheckoutPage extends UserBasePage
+{
     
-    get radioCOD () {
+    get COD_radiobtn () {
         return $('//span[contains(.,"Cash on Delivery")]');
     }
 
-    get radioPaypal () {
+    get Paypal_radiobtn () {
         return $('//span[contains(.,"Paypal")]');
     }
 
-    get btnOrder () {
+    get Order_btn () {
         return $('input[value="Order Now"]');
     }
     

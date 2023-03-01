@@ -1,4 +1,7 @@
-class UserRestaurantPage{
+import UserBasePage from "./userBase.page.js";
+
+class UserRestaurantPage extends UserBasePage
+{
     
 
 

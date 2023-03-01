@@ -1,4 +1,4 @@
-class AdminHomePage{
+export default class AdminBasePage{
     
     get Dashboard_btn () {
         return $('//span[.="Dashboard"]');
@@ -35,21 +35,6 @@ class AdminHomePage{
     get Orders_btn () {
         return $('//a[.="Orders"]');
     }
-
-    get Profile_img () {
-        return $('//img[@class="profile-pic"]/..');
-    }
-
-    get Logout_btn () {
-        return $('//a[contains(.," Logout")]');
-    }
-
-    async Adminlogout () {
-        await (await this.Profile_img).click()
-        await this.Logout_btn.click();
-    }
-
-
 }
 
-export default new AdminHomePage();
+

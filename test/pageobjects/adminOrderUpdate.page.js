@@ -1,18 +1,18 @@
 class OrderUpdatePage{
     
-    get selectStatus () {
+    get Status_dd () {
         return $('//select');
     }
 
-    get inputRemark () {
+    get Remark_tf () {
         return $('//textarea');
     }
 
-    get btnSubmit () {
+    get Submit_btn () {
         return $('input[name="update"]');
     }
 
-    get btnClose () {
+    get Close_btn () {
         return $('input[name="Submit2"]');
     }
 

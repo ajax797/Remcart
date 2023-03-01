@@ -1,4 +1,4 @@
-class UserHomePage{
+export default class UserBasePage{
     
     get Home_link () {
         return $('//a[contains(.,"Home")]');
@@ -19,4 +19,4 @@ class UserHomePage{
 
 }
 
-export default new UserHomePage();
+

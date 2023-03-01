@@ -1,3 +1,5 @@
+//import { expect } from 'chai';
+
 export const config = {
     //
     // ====================
@@ -204,6 +206,7 @@ export const config = {
      * @param {Object}         browser      instance of created browser/device session
      */
     // before: function (capabilities, specs) {
+    //     global.expect=expect;
     // },
     /**
      * Runs before a WebdriverIO command gets executed.
@@ -228,6 +231,7 @@ export const config = {
      * beforeEach in Mocha)
      */
     // beforeHook: function (test, context) {
+       
     // },
     /**
      * Hook that gets executed _after_ a hook within the suite starts (e.g. runs after calling

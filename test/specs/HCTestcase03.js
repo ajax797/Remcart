@@ -41,11 +41,6 @@ describe('order dish', async () => {
 
      it('purchase the dish', async () => {
         
-      //  const price= await browser.$('//a[.="Biriyani"]/../../../../..//span')
-      //   let priceValue=await price.getText()
-
-      //   browser.waitUntil(async()=>{return await (await browser.$(`//input[contains(@value,"${priceValue}")]`)).waitForDisplayed()},{timeouts:10000})
-
         const Checkout = await browser.$('//a[.="Checkout"]')
         await Checkout.click()
  

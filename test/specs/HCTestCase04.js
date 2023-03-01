@@ -1,8 +1,7 @@
 //login as user order a dish navigate to admin module update the order status
 
 describe('Update order status', async () => {
-    let rn=Math.trunc(Math.random()*1000)
-
+    
     it('login as user', async () => {
        await browser.maximizeWindow()
        await browser.url("http://testingserver/domain/Online_Food_Ordering_System")
