@@ -5,9 +5,11 @@ import AdminHomePage from '../pageobjects/adminHome.page.js'
 import AddMenuPage from '../pageobjects/adminAddMenu.page.js'
 import UserHomePage from '../pageobjects/userHome.page.js'
 import UserDishesPage from '../pageobjects/userDishes.page.js'
+import UserRestaurantPage from '../pageobjects/userRestaurant.page.js'
 
 describe('Adding dish ', async () => {
     let rn=Math.trunc(Math.random()*1000)
+    let dishName='Biriyani'+rn
 
     it('login as Admin', async () => {
         await browser.maximizeWindow()
@@ -24,7 +26,7 @@ describe('Adding dish ', async () => {
         await browser.waitUntil(async()=>(await (await AddMenuPage.menuHeader).isDisplayed()))
         expect(browser).toHaveTitleContaining("Add Menu")
         const dishImagePath=await browser.uploadFile('food1.jpg')
-        await AddMenuPage.addMenu('Biriyani'+rn,'Vegitarian','5',dishImagePath,'Jordania')
+        await AddMenuPage.addMenu(dishName,'Vegitarian','5',dishImagePath,'Jordania')
         expect(await (await AddMenuPage.confirm_Msg).getText()).toContain('New Dish Added Successfully')
         console.log(await AddMenuPage.confirm_Msg.getText());
     })
@@ -35,13 +37,13 @@ describe('Adding dish ', async () => {
         await UserHomePage.Restaurants_link.click()
         expect(browser).toHaveTitleContaining("Restaurants")
         let restaurantName='Jordania'
-        const viewMenu = await browser.$('//a[.="'+restaurantName+'"]/../../../following-sibling::div//a')
-        await viewMenu.click()       
+        UserRestaurantPage.select_RestaurantName=restaurantName
+        await (await UserRestaurantPage.viewMenu_btn).click()      
         browser.waitUntil(async()=>(await (await UserDishesPage.menuHeader).isDisplayed()))  
         expect(browser).toHaveTitleContaining("Dishes")  
         expect(await (await UserDishesPage.Restaurants_Title).getText()).toContain(restaurantName)     
-        const dishName= await browser.$('//a[.="Biriyani'+rn+'"]')
-        expect(await dishName.getText()).toContain('Biriyani'+rn)
+        UserDishesPage.select_foodName=dishName
+        expect(await (await UserDishesPage.DishName).getText()).toContain(dishName)
      })
 
 })

@@ -19,10 +19,22 @@ class AddCategoryPage extends adminBasePage
         return $('//tbody');
     }
 
-    async addCategory (categoryName) {
-        await this.CategoryName_tf.setValue(categoryName);
+    async addCategory (catName) {
+        await this.CategoryName_tf.setValue(catName);
         await this.Save_btn.click();
     }   
+    CatName=''
+    set select_Category(CatName)
+    {
+        this.CatName=CatName
+    }
+
+    get expCategoryName()
+    {
+        return $('//tbody//td[.="'+this.CatName+'"]');
+    }
+
+
 }
 
 export default new AddCategoryPage();

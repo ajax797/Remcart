@@ -8,6 +8,7 @@ import UserDishesPage from '../pageobjects/userDishes.page.js'
 import UserHomePage from '../pageobjects/userHome.page.js'
 import UserLoginPage from '../pageobjects/userLogin.page.js'
 import ViewOrdersPage from '../pageobjects/adminViewOrders.page.js'
+import UserRestaurantPage from '../pageobjects/userRestaurant.page.js'
 
 describe('Update order status', async () => {
     let restaurantName='Jordania'
@@ -27,16 +28,17 @@ describe('Update order status', async () => {
     it('purchase the dish', async () => {       
         await (await UserHomePage.Restaurants_link).click() 
         expect(browser).toHaveTitleContaining("Restaurants")
-        const viewMenu = await browser.$(`//a[.="${restaurantName}"]/../../../following-sibling::div//a`)
-        await viewMenu.click() 
+        UserRestaurantPage.select_RestaurantName=restaurantName
+        await (await UserRestaurantPage.viewMenu_btn).click()
         expect(browser).toHaveTitleContaining("Dishes")       
         await browser.waitUntil(async()=>(await (await UserDishesPage.menuHeader).isDisplayed()))
-        expect(await (await UserDishesPage.Restaurants_Title).getText()).toContain(restaurantName)       
-        const addtoCart= await browser.$(`//a[.="${foodName}"]/../../../../..//input[@type="submit"]`)
-        await addtoCart.click()
-        const price= await browser.$(`//a[.="${foodName}"]/../../../../..//span`)
-        let priceValue=await price.getText()
-        await browser.waitUntil(async()=>(( await (await browser.$(`//input[contains(@value,"${priceValue}")]`)).isDisplayed())))
+        expect(await (await UserDishesPage.Restaurants_Title).getText()).toContain(restaurantName) 
+        UserDishesPage.select_foodName=foodName
+        await (await UserDishesPage.addToCart_btn).click()
+        UserDishesPage.select_foodName=foodName
+        let priceValue=await (await UserDishesPage.foodPrice).getText()
+        UserDishesPage.set_priceValue=priceValue
+        await browser.waitUntil(async()=>(( await (await UserDishesPage.CartPrice_bt).isDisplayed())))
         await (await UserDishesPage.Checkout_btn).click() 
         expect(browser).toHaveTitleContaining("Checkout")
         await (await UserCheckoutPage.COD_radiobtn).click()        

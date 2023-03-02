@@ -30,6 +30,36 @@ class UserDishesPage extends UserBasePage
     get Restaurants_Title () {
         return $('//a[.="Jordania"]');
     } 
+
+    foodName=''
+    get foodPrice () 
+    {
+        return $(`//a[.="${this.foodName}"]/../../../../following-sibling::div/span`);
+    }
+    set select_foodName(foodName)
+    {
+        this.foodName=foodName
+    }
+    get addToCart_btn () 
+    {
+        return $(`//a[.="${this.foodName}"]/../../../../..//input[@type="submit"]`);
+    }
+
+    priceValue=''
+    set set_priceValue(priceValue)
+    {
+        this.priceValue=priceValue
+    }
+    get CartPrice_bt () 
+    {
+        return $(`//input[contains(@value,"${this.priceValue}")]`);
+    }
+
+    
+    get DishName () 
+    {
+        return $('//a[.="'+this.fname+'"]');
+    }
     
 
 }
