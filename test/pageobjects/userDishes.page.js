@@ -28,8 +28,13 @@ class UserDishesPage extends UserBasePage
     }
    
     get Restaurants_Title () {
-        return $('//a[.="Jordania"]');
+        return $(`//a[.="${this.RestaurantsName}"]`);
     } 
+    RestaurantsName=''
+    set set_RestaurantsName(RestaurantsName)
+    {
+        this.RestaurantsName=RestaurantsName
+    }
 
     foodName=''
     get foodPrice () 
@@ -58,7 +63,7 @@ class UserDishesPage extends UserBasePage
     
     get DishName () 
     {
-        return $('//a[.="'+this.fname+'"]');
+        return $('//a[.="'+this.foodName+'"]');
     }
     
 

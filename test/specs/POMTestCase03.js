@@ -5,7 +5,7 @@ import UserDishesPage from '../pageobjects/userDishes.page.js'
 import UserHomePage from '../pageobjects/userHome.page.js'
 import UserLoginPage from '../pageobjects/userLogin.page.js'
 import UserRestaurantPage from '../pageobjects/userRestaurant.page.js' 
-
+import { expect } from 'chai'
 describe('order dish', async () => {
     let restaurantName='Jordania'
     let foodName = 'Biriyani'
@@ -13,22 +13,23 @@ describe('order dish', async () => {
     it('login as user', async () => {
       await browser.maximizeWindow()
       await browser.url("http://testingserver/domain/Online_Food_Ordering_System")
-      expect(browser).toHaveTitleContaining("Home")
+      expect(await browser.getTitle()).to.contain("Home")
       await (await UserHomePage.Login_link).click()
-      expect(browser).toHaveTitleContaining("Login")
+      expect(await browser.getTitle()).to.contain("Login")
       await UserLoginPage.Userlogin(user,'123aj456')
-      await browser.waitUntil(async()=>(await browser.getTitle())==="Home")    
-      expect(browser).toHaveTitleContaining("Home") 
+      await browser.waitUntil(async()=>(await browser.getTitle())==="Home")  
+      expect(await browser.getTitle()).to.contain("Home") 
     })
     
     it('add a dish to cart', async () => {    
         await (await UserHomePage.Restaurants_link).click() 
-        expect(browser).toHaveTitleContaining("Restaurants")
+        expect(await browser.getTitle()).to.contain("Restaurants")
         UserRestaurantPage.select_RestaurantName=restaurantName
         await (await UserRestaurantPage.viewMenu_btn).click()
-        expect(browser).toHaveTitleContaining("Dishes")       
+        expect(await browser.getTitle()).to.contain("Dishes")       
         await browser.waitUntil(async()=>(await (await UserDishesPage.menuHeader).isDisplayed()))
-        expect(await (await UserDishesPage.Restaurants_Title).getText()).toContain(restaurantName) 
+        UserDishesPage.set_RestaurantsName=restaurantName
+        expect(await (await UserDishesPage.Restaurants_Title).getText()).to.contain(restaurantName) 
         UserDishesPage.select_foodName=foodName
         await (await UserDishesPage.addToCart_btn).click()    
      })
@@ -39,7 +40,7 @@ describe('order dish', async () => {
         UserDishesPage.set_priceValue=priceValue
         await browser.waitUntil(async()=>(( await (await UserDishesPage.CartPrice_bt).isDisplayed())))
         await (await UserDishesPage.Checkout_btn).click() 
-        expect(browser).toHaveTitleContaining("Checkout")
+        expect(await browser.getTitle()).to.contain("Checkout")
         await (await UserCheckoutPage.COD_radiobtn).click()        
         await (await UserCheckoutPage.Order_btn).click()
         await browser.waitUntil(async ()=> await browser.isAlertOpen())
@@ -47,7 +48,7 @@ describe('order dish', async () => {
         await browser.waitUntil(async ()=> await browser.isAlertOpen())
         console.log(await browser.getAlertText())
         await browser.acceptAlert()
-        expect(browser).toHaveTitleContaining("My Orders")
+        expect(await browser.getTitle()).to.contain("My Orders")
      })
 
 })

@@ -15,6 +15,21 @@ class ViewOrdersPage extends adminBasePage
         return $('//strong[.="Status:"]/../..//button');
     }
 
+    foodName=''
+    User=''
+    get edit_btn () 
+    {
+        return $(`//td[.="${this.User}"]/../td[.="${this.foodName}"]/..//a[contains(@href,"view")]`);
+    }
+    set set_foodName(foodName)
+    {
+        this.foodName=foodName
+    }
+    set set_User(User)
+    {
+        this.User=User
+    }
+
 }
 
 export default new ViewOrdersPage();
