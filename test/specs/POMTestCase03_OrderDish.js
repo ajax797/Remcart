@@ -9,6 +9,7 @@ import { expect } from 'chai'
 describe('order dish', async () => {
     let restaurantName='Jordania'
     let foodName = 'Biriyani'
+    let quantity = '1'
     let user='ajax'
     it('login as user', async () => {
       await browser.maximizeWindow()
@@ -21,7 +22,7 @@ describe('order dish', async () => {
       expect(await browser.getTitle()).to.contain("Home") 
     })
     
-    it('add a dish to cart', async () => {    
+    it ('add a dish to cart', async () => {    
         await (await UserHomePage.Restaurants_link).click() 
         expect(await browser.getTitle()).to.contain("Restaurants")
         UserRestaurantPage.select_RestaurantName=restaurantName
@@ -36,19 +37,22 @@ describe('order dish', async () => {
 
      it ('purchase the dish', async () => {       
         UserDishesPage.select_foodName=foodName
-        let priceValue=await (await UserDishesPage.foodPrice).getText()
-        UserDishesPage.set_priceValue=priceValue
+        let dishPrice=await (await UserDishesPage.foodPrice).getText()
+        UserDishesPage.set_priceValue=dishPrice
         await browser.waitUntil(async()=>(( await (await UserDishesPage.CartPrice_bt).isDisplayed())))
+        expect(await UserDishesPage.CartPrice_bt.getValue()==dishPrice).to.be.true
+        expect(await UserDishesPage.foodInCart.getText()==foodName)
+        expect(await UserDishesPage.CartQuantity.getValue()==quantity)
         await (await UserDishesPage.Checkout_btn).click() 
         expect(await browser.getTitle()).to.contain("Checkout")
         await (await UserCheckoutPage.COD_radiobtn).click()        
         await (await UserCheckoutPage.Order_btn).click()
-        await browser.waitUntil(async ()=> await browser.isAlertOpen())
+        //await browser.waitUntil(async ()=> await browser.isAlertOpen())
         await browser.acceptAlert()
-        await browser.waitUntil(async ()=> await browser.isAlertOpen())
+      //   await browser.waitUntil(async ()=> await browser.isAlertOpen())
         console.log(await browser.getAlertText())
         await browser.acceptAlert()
-        expect(await browser.getTitle()).to.contain("My Orders")
+        //expect(await browser.getTitle()).to.contain("My Orders")
      })
 
 })

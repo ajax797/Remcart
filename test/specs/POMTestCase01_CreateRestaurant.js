@@ -24,10 +24,12 @@ describe('Adding restaurant ', async () => {
         await AdminHomePage.Restaurant_btn.click()
         await AdminHomePage.AddCategory_btn.click()
         expect(await browser.getTitle()).to.contain("Add Category")
+        await browser.waitUntil(async()=>(await AddCategoryPage.Save_btn).isClickable())
         await AddCategoryPage.addCategory(CategoryName)
         expect( await AddCategoryPage.Category_Table.waitForDisplayed()).to.be.true
         AddCategoryPage.select_Category=CategoryName
         expect(await (await AddCategoryPage.expCategoryName).getText()).to.contain(CategoryName)
+        //expect.fail()
     })
 
     it ('Add Restaurant',async()=>{
@@ -35,7 +37,7 @@ describe('Adding restaurant ', async () => {
         expect(await browser.getTitle()).to.contain("Add Restaurant")
         const resImagePath=await browser.uploadFile('res4.jpg')
         await AddResaurantPage.addRestaurant(RestaurantName,RestaurantName+'gmail.com',Math.trunc(Math.random()*10000000000),RestaurantName+'.com','9am','9pm','24hr-x7',resImagePath,CategoryName,RestaurantName+',Dubai Mall - Galeries Lafayette Le Gourmet  2nd Level, Galeries Lafayette, The Dubai Mall - Dubai - United Arab Emirates')
-        await browser.waitUntil(()=>AddResaurantPage.confirm_Msg.isDisplayed())
+        await browser.waitUntil(async()=>await AddResaurantPage.confirm_Msg.isDisplayed())
         expect(await AddResaurantPage.confirm_Msg.getText()).to.contain('New Restaurant Added Successfully')
         console.log(await AddResaurantPage.confirm_Msg.getText());
     })

@@ -21,7 +21,7 @@ class AddCategoryPage extends adminBasePage
 
     async addCategory (catName) {
         await this.CategoryName_tf.setValue(catName);
-        await this.Save_btn.click();
+        await(await this.Save_btn).click();
     }   
     CatName=''
     set select_Category(CatName)

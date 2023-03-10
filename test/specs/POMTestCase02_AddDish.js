@@ -27,7 +27,7 @@ describe('Adding dish ', async () => {
         await browser.waitUntil(async()=>(await (await AddMenuPage.menuHeader).isDisplayed()))
         expect(await browser.getTitle()).to.contain("Add Menu")
         const dishImagePath=await browser.uploadFile('food1.jpg')
-        await AddMenuPage.addMenu(dishName,'Vegitarian','5',dishImagePath,'Jordania')
+        await AddMenuPage.addMenu(dishName,'Vegitarian','5',dishImagePath,restaurantName)
         expect(await (await AddMenuPage.confirm_Msg).getText()).to.contain('New Dish Added Successfully')
         console.log(await AddMenuPage.confirm_Msg.getText());
     })
