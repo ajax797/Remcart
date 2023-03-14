@@ -1,3 +1,5 @@
+import { expect } from 'chai'
+
 describe('igp', async () => {
     it('handling auto suggestions', async () => {
        await browser.maximizeWindow()
@@ -5,7 +7,7 @@ describe('igp', async () => {
 
        const inputSearch = await browser.$('input[placeholder="Search for gifts"]')
        await inputSearch.setValue('cake')
-
+    //    expect.fail()
        await browser.waitUntil(async()=>(await (await browser.$('div[id="searched-Items"]')).isDisplayed()))
 
        const suggestionsList = await browser.$$('//li[@class="cards-li"]/a/div')

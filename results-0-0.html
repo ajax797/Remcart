@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="igp" timestamp="2023-03-14T17:19:09" time="5.296" tests="1" failures="1" errors="1" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="igp"/>
+      <property name="capabilities" value="chrome.111_0_5563_64.windows"/>
+      <property name="file" value="file:///C:/Users/ajax2/OneDrive/Desktop/Remcart%20Project/test/specs/Assignments/igpAutosuggestion.js"/>
+    </properties>
+    <testcase classname="chrome.111_0_5563_64.windows.igp" name="handling auto suggestions" time="5.295">
+      <failure/>
+      <error message="expect.fail()"/>
+      <system-out><![CDATA[
+COMMAND: POST /session/60bb01c7d30403029e5218892e81ef8b/window/maximize - {}
+RESULT: {}
+COMMAND: POST /session/60bb01c7d30403029e5218892e81ef8b/url - {"url":"https://www.igp.com/"}
+RESULT: {"url":"https://www.igp.com/"}
+COMMAND: POST /session/60bb01c7d30403029e5218892e81ef8b/element - {"using":"css selector","value":"input[placeholder=\"Search for gifts\"]"}
+RESULT: {"using":"css selector","value":"input[placeholder=\"Search for gifts\"]"}
+COMMAND: POST /session/60bb01c7d30403029e5218892e81ef8b/element/f45c6de4-9303-4fdd-9529-1a0b9b5d1e5f/clear - {}
+RESULT: {}
+COMMAND: POST /session/60bb01c7d30403029e5218892e81ef8b/element/f45c6de4-9303-4fdd-9529-1a0b9b5d1e5f/value - {"text":"cake"}
+RESULT: {"text":"cake"}
+COMMAND: GET /session/60bb01c7d30403029e5218892e81ef8b/screenshot - {}
+RESULT: {}
+COMMAND: DELETE /session/60bb01c7d30403029e5218892e81ef8b - {}
+RESULT: {}
+]]></system-out>
+      <system-err><![CDATA[
+AssertionError: expect.fail()
+    at Context.<anonymous> (file:///C:/Users/ajax2/OneDrive/Desktop/Remcart%20Project/test/specs/Assignments/igpAutosuggestion.js:10:15)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+]]></system-err>
+    </testcase>
+  </testsuite>
+</testsuites>

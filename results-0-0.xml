@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="igp" timestamp="2023-03-14T17:15:14" time="6.977" tests="1" failures="0" errors="0" skipped="0">
+    <properties>
+      <property name="specId" value="0"/>
+      <property name="suiteName" value="igp"/>
+      <property name="capabilities" value="chrome.111_0_5563_64.windows"/>
+      <property name="file" value="file:///C:/Users/ajax2/OneDrive/Desktop/Remcart%20Project/test/specs/Assignments/igpAutosuggestion.js"/>
+    </properties>
+    <testcase classname="chrome.111_0_5563_64.windows.igp" name="handling auto suggestions" time="6.976">
+      <system-out><![CDATA[
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/window/maximize - {}
+RESULT: {}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/url - {"url":"https://www.igp.com/"}
+RESULT: {"url":"https://www.igp.com/"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element - {"using":"css selector","value":"input[placeholder=\"Search for gifts\"]"}
+RESULT: {"using":"css selector","value":"input[placeholder=\"Search for gifts\"]"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element/43a6c96d-e48a-4480-a76a-2ec9caeb716d/clear - {}
+RESULT: {}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element/43a6c96d-e48a-4480-a76a-2ec9caeb716d/value - {"text":"cake"}
+RESULT: {"text":"cake"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element - {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+RESULT: {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element - {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+RESULT: {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element - {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+RESULT: {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element - {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+RESULT: {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/element - {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+RESULT: {"using":"css selector","value":"div[id=\"searched-Items\"]"}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/execute/sync - {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+RESULT: {"script":"return (function isElementDisplayed(element) {\n    function nodeIsElement(node) {\n        if (!node) {\n            return false;\n        }\n        switch (node.nodeType) {\n            case Node.ELEMEN ... (7807 more bytes)","args":[{"element-6066-11e4-a52e-4f735466cecf":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23","ELEMENT":"2ac73eb9-a925-4ebb-bcef-5da7eb3e8e23"}]}
+COMMAND: POST /session/406f01ccd1d39f29acff9b0e6f68cc5a/elements - {"using":"xpath","value":"//li[@class=\"cards-li\"]/a/div"}
+RESULT: {"using":"xpath","value":"//li[@class=\"cards-li\"]/a/div"}
+COMMAND: GET /session/406f01ccd1d39f29acff9b0e6f68cc5a/element/24a9762a-8724-4a6d-a1d9-868747921581/text - {}
+COMMAND: GET /session/406f01ccd1d39f29acff9b0e6f68cc5a/element/f83327bf-15c6-48a6-9269-39c05d91bcb6/text - {}
+COMMAND: GET /session/406f01ccd1d39f29acff9b0e6f68cc5a/element/7ed8ac15-d770-4624-8660-2dfe128e1c24/text - {}
+COMMAND: GET /session/406f01ccd1d39f29acff9b0e6f68cc5a/element/d88fb83d-bfbf-4a2e-8323-2eeb126270b4/text - {}
+COMMAND: GET /session/406f01ccd1d39f29acff9b0e6f68cc5a/element/43ac7a11-3ec9-4da2-88c1-eb7193743916/text - {}
+RESULT: {}
+RESULT: {}
+RESULT: {}
+RESULT: {}
+RESULT: {}
+COMMAND: DELETE /session/406f01ccd1d39f29acff9b0e6f68cc5a - {}
+RESULT: {}
+]]></system-out>
+    </testcase>
+  </testsuite>
+</testsuites>

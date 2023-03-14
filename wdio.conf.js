@@ -1,4 +1,4 @@
-import { expect } from 'chai';
+//import { expect } from 'chai';
 
 export const config = {
     //
@@ -164,11 +164,18 @@ export const config = {
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
     //reporters: ['spec'],
-    reporters: [['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: true,
-        disableWebdriverScreenshotsReporting: false,
-    }]],
+    // reporters: [['allure', {
+    //     outputDir: 'allure-results',
+    //     disableWebdriverStepsReporting: true,
+    //     disableWebdriverScreenshotsReporting: false,
+    // }]],
+    reporters: [
+        
+        ['junit', {
+            outputDir: './',
+            outputFileFormat: function(options){return `results-${new Date().getMilliseconds}.xml`}
+        }]
+    ],
 
 
     
@@ -232,7 +239,7 @@ export const config = {
      * @param {Object}         browser      instance of created browser/device session
      */
     before: function (capabilities, specs) {
-        global.expect=expect;
+       // global.expect=expect;
     },
     /**
      * Runs before a WebdriverIO command gets executed.

@@ -56,8 +56,6 @@ describe('open account and check in pending customer',async()=>{
     })
     it('check whether application is displayed',async()=>{
         await (await staffHomePage.ApprovePendingAccount_btn).click()
-
-
         await (await pendingCustomerPage.applicationNoSearch_tf).setValue(applicationNumber)
         await (await pendingCustomerPage.Search_btn).click()
         await browser.waitUntil(async()=>(await (await pendingCustomerPage.tableData).isDisplayed()))
